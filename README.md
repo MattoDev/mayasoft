@@ -9,6 +9,27 @@ In the project directory, you can run:
 ### `start de fake API`
 to start the fake api you must be in the api folder and execute the command npm start
 Open [http://localhost:3001]( http://localhost:3001) to view it in your browser.
+
+
+cat-spa\api
+
+λ npm start
+
+> api@1.0.0 start
+> json-server --watch db.json --port 3001
+
+
+  \{^_^}/ hi!
+
+  Loading db.json
+  Done
+
+  Resources
+  http://localhost:3001/cats
+
+  Home
+  http://localhost:3001
+
 you can change the port in package.json 
  "scripts": {
     "start": "json-server --watch db.json --port 3001"
