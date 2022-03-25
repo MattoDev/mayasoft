@@ -4,6 +4,7 @@ import { useAppContext } from "../context/context";
 import MaterialTable from "material-table";
 import axios from "axios";
 import { Modal, TextField, Button } from "@material-ui/core";
+import CatTable from "../components/CatTable";
 
 export default function LocalCatList() {
   const {
@@ -106,146 +107,25 @@ export default function LocalCatList() {
     get();
   }, []);
 
-  const bodyInsertar = (
-    <div className={styles.modal}>
-      <h3>Add new cat</h3>
-      <TextField
-        className={styles.inputMaterial}
-        label="Id"
-        name="id"
-        onChange={handleChange}
-      />
-      <br />
-      <TextField
-        className={styles.inputMaterial}
-        label="Name"
-        name="name"
-        onChange={handleChange}
-      />
-      <br />
-      <TextField
-        className={styles.inputMaterial}
-        label="Breed"
-        name="breed"
-        onChange={handleChange}
-      />
-      <br />
-      <TextField
-        className={styles.inputMaterial}
-        label="Weigth"
-        name="weigth"
-        onChange={handleChange}
-      />
-      <br />
-      <br />
-      <div align="right">
-        <Button color="primary" onClick={() => post()}>
-          Insert
-        </Button>
-        <Button onClick={() => openCloseInsertModal()}>Cancel</Button>
-      </div>
-    </div>
-  );
-
-  const bodyEditar = (
-    <div className={styles.modal}>
-      <h3>Cat edit</h3>
-
-      <br />
-      <TextField
-        className={styles.inputMaterial}
-        label="Name"
-        name="name"
-        onChange={handleChange}
-        value={selectCat && selectCat.name}
-      />
-      <br />
-      <TextField
-        className={styles.inputMaterial}
-        label="Breed"
-        name="breed"
-        onChange={handleChange}
-        value={selectCat && selectCat.breed}
-      />
-      <br />
-      <TextField
-        className={styles.inputMaterial}
-        label="Weigth"
-        name="weigth"
-        onChange={handleChange}
-        value={selectCat && selectCat.weigth}
-      />
-      <br />
-      <br />
-      <div align="right">
-        <Button color="primary" onClick={() => put()}>
-          Edit
-        </Button>
-        <Button onClick={() => openCloseEditModal()}>Cancel</Button>
-      </div>
-    </div>
-  );
-
-  const bodyEliminar = (
-    <div className={styles.modal}>
-      <p>
-        Are you sure you want to delete this cat?{" "}
-        <b>{selectCat && selectCat.name}</b>?{" "}
-      </p>
-      <div align="right">
-        <Button color="secondary" onClick={() => deletePetition()}>
-          Yes
-        </Button>
-        <Button onClick={() => openCloseDeleteModal()}>No</Button>
-      </div>
-    </div>
-  );
-
   return (
     <div className="container">
-      <Button
-        color="primary"
-        variant="contained"
-        className="mt-3 mb-3"
-        onClick={() => openCloseInsertModal()}
-      >
-        Add cat
-      </Button>
-      <MaterialTable
+      <CatTable
+        styles={styles}
         columns={columns}
+        handleChange={handleChange}
+        post={post}
+        openCloseInsertModal={openCloseInsertModal}
+        selectCat={selectCat}
+        put={put}
+        openCloseEditModal={openCloseEditModal}
+        deletePetition={deletePetition}
+        openCloseDeleteModal={openCloseDeleteModal}
         data={data}
-        title="My cat list"
-        actions={[
-          {
-            icon: "edit",
-            tooltip: "Edit cat",
-            onClick: (event, rowData) => selectedCat(rowData, "Edit"),
-          },
-          {
-            icon: "delete",
-            tooltip: "Delete cat",
-            onClick: (event, rowData) => selectedCat(rowData, "Delete"),
-          },
-        ]}
-        options={{
-          actionsColumnIndex: -1,
-        }}
-        localization={{
-          header: {
-            actions: "Action",
-          },
-        }}
+        selectedCat={selectedCat}
+        insertModal={insertModal}
+        editModal={editModal}
+        deleteModal={deleteModal}
       />
-
-      <Modal open={insertModal} onClose={openCloseInsertModal}>
-        {bodyInsertar}
-      </Modal>
-      <Modal open={editModal} onClose={openCloseEditModal}>
-        {bodyEditar}
-      </Modal>
-      <Modal open={deleteModal} onClose={openCloseDeleteModal}>
-        {bodyEliminar}
-      </Modal>
     </div>
   );
 }
