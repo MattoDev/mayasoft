@@ -1,9 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useAppContext } from "../context/context";
-import MaterialTable from "material-table";
 import axios from "axios";
-import { Modal, TextField, Button } from "@material-ui/core";
 import CatTable from "../components/CatTable";
 
 export default function LocalCatList() {

@@ -46,7 +46,7 @@ const Pagination = ({
         <input
           className="form-control"
           value={value}
-          placeholder="search by name or breed"
+          placeholder="Type the name or breed of the cat you want to search for"
           onChange={handleChange}
         />
       </div>

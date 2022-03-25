@@ -5,48 +5,7 @@
       "name": "gardfield",
       "breed": "american",
       "weigth": "13"
-    },
-    {
-      "id": "2",
-      "name": "bsho",
-      "breed": "British Shorthair",
-      "weigth": "20",
-      "tableData": {
-        "id": 1
-      }
-    },
-    {
-      "id": "3",
-      "name": "abob",
-      "breed": "American Curl",
-      "weigth": "5"
-    },
-    {
-      "id": "4",
-      "name": "bure",
-      "breed": "Burmese",
-      "weigth": "6",
-      "tableData": {
-        "id": 1
-      }
-    },
-    {
-      "id": "5",
-      "name": "bomb",
-      "breed": "bombay",
-      "weigth": "11",
-      "tableData": {
-        "id": 1
-      }
-    },
-    {
-      "id": "6",
-      "name": "jbob",
-      "breed": "Japanese Bobtail",
-      "weigth": "6",
-      "tableData": {
-        "id": 1
-      }
     }
+    
   ]
 }
