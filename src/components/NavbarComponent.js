@@ -7,9 +7,9 @@ import {
   Switch,
   Link,
 } from "react-router-dom";
-import GlobalCatList from "./GlobalCatList";
-import LocalCatList from "./LocalCatList";
-import Home from "./Home";
+import GlobalCatList from "../containers/GlobalCatList";
+import LocalCatList from "../containers/LocalCatList";
+import Home from "../containers/Home";
 
 class NavbarComponent extends Component {
   render() {

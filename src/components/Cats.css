@@ -1,0 +1,8 @@
+.borderCard {
+  border-radius: 40px !important;
+}
+
+.imageBorder {
+  border-top-right-radius: 40px;
+  border-top-left-radius: 40px;
+}
