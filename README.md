@@ -6,6 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `start de fake API`
+to start the fake api you must be in the api folder and execute the command npm start
 ### `npm start`
 
 Runs the app in the development mode.\
